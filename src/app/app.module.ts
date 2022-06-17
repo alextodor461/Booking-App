@@ -1,16 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
+import  {MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StarterPageComponent } from './starter-page/starter-page.component';
+import { FormComponent } from './form/form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { BookComponent } from './book/book.component';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StarterPageComponent,
+    FormComponent,
+    FooterComponent,
+    HeaderComponent,
+    BookComponent,
+    AboutComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,41 @@
+<main>
+    <!--<button (click)="goHome()" class="home-btn" mat-fab color="primary">
+        <mat-icon>home</mat-icon>
+    </button>-->
+    <form [formGroup]="form">
+        <div class="form-div">
+            <h3>Contact us</h3>
+            <div class="all-name-div">
+                <div class="name-div">
+                    <input formControlName="name" type="text" placeholder="Name">
+                    <ng-container *ngIf="form.controls['name'] as name">
+                        <p *ngIf="name.errors?.['required'] && name.touched">Name is required*</p>
+                    </ng-container>
+                </div>
+
+                <div class="lastname-div">
+                    <input formControlName="lastName" type="text" placeholder="Last Name">
+                    <ng-container *ngIf="form.controls['lastName'] as lastname">
+                        <p *ngIf="lastname.errors?.['required'] && lastname.touched">Last Name is required*</p>
+                    </ng-container>
+                </div>
+
+                <div class="email-div">
+                    <input formControlName="email" type="email" placeholder="Email">
+                </div>
+
+                <div class="phone-div">
+                    <input type="number" placeholder="Phone number" min="0">
+                </div>
+            </div>
+
+            <button>Contact</button>
+        </div>
+        <div class="info">
+            <h3>Learn more</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga itaque eos quo possimus nulla pariatur
+                porro corporis blanditiis neque excepturi non quam sequi dignissimos quae optio doloribus, voluptas
+                deserunt ipsum!</p>
+        </div>
+    </form>
+</main>

@@ -1,0 +1,13 @@
+<main>
+    <h1>Book your dream now!</h1>
+    <div class="all-cards">
+        <div *ngFor="let countrName of country" class="card">
+            <img src="{{ countrName.img }}" alt="">
+            <div class="card-info">
+                <h3>{{ countrName.name }}</h3>
+                <p>{{ countrName.text }}</p>
+                <p>{{ countrName.price }}</p>
+            </div>
+        </div>
+    </div>
+</main>

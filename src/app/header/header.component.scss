@@ -1,0 +1,25 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 55px;
+    height: 10vh;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.254);
+
+    .links {
+        a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                color: #696eab;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    img {
+        width: 80px;
+    }
+}
