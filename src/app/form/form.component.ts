@@ -21,7 +21,8 @@ export class FormComponent implements OnInit {
   form = new FormGroup({
     	name: new FormControl('', [
         Validators.required,
-        Validators.minLength(2)
+        Validators.minLength(2),
+        Validators.maxLength(20)
       ], []),
 
       lastName: new FormControl('', [
@@ -31,7 +32,12 @@ export class FormComponent implements OnInit {
 
       email: new FormControl('', [
         Validators.required,
-        Validators.pattern('^[a-z0-9_-]{8,15}$')
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
+      ], []),
+
+      number: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^((\\+49-?)|0)?[0-9]{10}$')
       ], [])
   })
 }

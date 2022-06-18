@@ -9,27 +9,38 @@
                 <div class="name-div">
                     <input formControlName="name" type="text" placeholder="Name">
                     <ng-container *ngIf="form.controls['name'] as name">
-                        <p *ngIf="name.errors?.['required'] && name.touched">Name is required*</p>
+                        <p class="validation" *ngIf="name.errors?.['required'] && name.touched">Name is required*</p>
+                        <p class="validation" *ngIf="name.errors?.['minlength']">There must be at least two characters</p>
+                        <p class="validation" *ngIf="name.errors?.['maxlength']">There can be a maximum of twenty characters</p>
                     </ng-container>
                 </div>
 
                 <div class="lastname-div">
                     <input formControlName="lastName" type="text" placeholder="Last Name">
                     <ng-container *ngIf="form.controls['lastName'] as lastname">
-                        <p *ngIf="lastname.errors?.['required'] && lastname.touched">Last Name is required*</p>
+                        <p class="validation" *ngIf="lastname.errors?.['required'] && lastname.touched">Last Name is required*</p>
+                        <p class="validation" *ngIf="lastname.errors?.['minlength']">There must be at least two characters</p>
                     </ng-container>
                 </div>
 
                 <div class="email-div">
                     <input formControlName="email" type="email" placeholder="Email">
+                    <ng-container *ngIf="form.controls['email'] as email">
+                        <p class="validation" *ngIf="email.errors?.['required'] && email.touched">Email is required*</p>
+                        <p class="validation" *ngIf="email.errors?.['pattern']">Email is invalid</p>
+                    </ng-container>
                 </div>
 
                 <div class="phone-div">
-                    <input type="number" placeholder="Phone number" min="0">
+                    <input formControlName="number" type="number" placeholder="Phone number" min="0">
+                    <ng-container *ngIf="form.controls['number'] as number">
+                        
+                        <p class="validation" *ngIf="number.errors?.['pattern']">Phone number is invalid</p>
+                    </ng-container>
                 </div>
             </div>
 
-            <button>Contact</button>
+            <button [disabled]="form.invalid">Contact</button>
         </div>
         <div class="info">
             <h3>Learn more</h3>

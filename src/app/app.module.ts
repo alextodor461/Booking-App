@@ -14,6 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { BookComponent } from './book/book.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { BlogComponent } from './blog/blog.component';
     HeaderComponent,
     BookComponent,
     AboutComponent,
-    BlogComponent
+    BlogComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { BlogComponent } from './blog/blog.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
