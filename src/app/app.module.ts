@@ -16,7 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BookDetailsComponent } from './book-details/book-details.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

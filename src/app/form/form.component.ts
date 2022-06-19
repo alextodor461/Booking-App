@@ -14,30 +14,35 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goHome(){
+  /*goHome(){
     this.route.navigate(['']);
-  }
+  }*/
 
   form = new FormGroup({
-    	name: new FormControl('', [
+    	name: new FormControl(null, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(20)
       ], []),
 
-      lastName: new FormControl('', [
+      lastName: new FormControl(null, [
         Validators.required,
         Validators.minLength(2)
       ], []),
 
-      email: new FormControl('', [
+      email: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
       ], []),
 
-      number: new FormControl('', [
+      number: new FormControl(null, [
         Validators.required,
         Validators.pattern('^((\\+49-?)|0)?[0-9]{10}$')
       ], [])
   })
+
+  send(){
+    console.log(this.form.value)
+    this.form.reset();
+  }
 }

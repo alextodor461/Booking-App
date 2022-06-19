@@ -1,14 +1,14 @@
 <main>
     <h1>Book your dream now!</h1>
     <div class="all-cards">
-        <div *ngFor="let countrName of country" class="card" (click)="openBookDetails()">
-            <img src="{{ countrName.img }}" alt="">
+        <div *ngFor="let countr of service.countries" class="card" (click)="openBookDetails()">
+            <img src="{{ countr.img }}" alt="">
             <div class="card-info">
-                <h3>{{ countrName.name }}</h3>
-                <p>{{ countrName.text }}</p>
+                <h3>{{ countr.name }}</h3>
+                <p>{{ countr.text }}</p>
                 <!--<p>{{ countrName.price }}</p>-->
             </div>
-            <button class="book-btn">Book now for {{ countrName.price }}</button>
+            <button class="book-btn">Book now for {{ countr.price }}</button>
         </div>
     </div>
 </main>

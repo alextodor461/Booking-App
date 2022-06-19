@@ -2,12 +2,12 @@
     <!--<button (click)="goHome()" class="home-btn" mat-fab color="primary">
         <mat-icon>home</mat-icon>
     </button>-->
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="send()">
         <div class="form-div">
             <h3>Contact us</h3>
             <div class="all-name-div">
                 <div class="name-div">
-                    <input formControlName="name" type="text" placeholder="Name">
+                    <input formControlName="name" type="text" placeholder="Name" id="name">
                     <ng-container *ngIf="form.controls['name'] as name">
                         <p class="validation" *ngIf="name.errors?.['required'] && name.touched">Name is required*</p>
                         <p class="validation" *ngIf="name.errors?.['minlength']">There must be at least two characters</p>
@@ -33,14 +33,13 @@
 
                 <div class="phone-div">
                     <input formControlName="number" type="number" placeholder="Phone number" min="0">
-                    <ng-container *ngIf="form.controls['number'] as number">
-                        
+                    <ng-container *ngIf="form.controls['number'] as number">     
                         <p class="validation" *ngIf="number.errors?.['pattern']">Phone number is invalid</p>
                     </ng-container>
                 </div>
             </div>
 
-            <button [disabled]="form.invalid">Contact</button>
+            <button [disabled]="form.invalid" (click)="send()">Contact</button>
         </div>
         <div class="info">
             <h3>Learn more</h3>
