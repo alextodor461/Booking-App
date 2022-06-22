@@ -17,6 +17,7 @@ import { BlogComponent } from './blog/blog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SentComponent } from './sent/sent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     BookComponent,
     AboutComponent,
     BlogComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    SentComponent
   ],
   imports: [
     BrowserModule,

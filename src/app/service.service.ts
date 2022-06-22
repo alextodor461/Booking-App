@@ -11,7 +11,6 @@ export class ServiceService {
   constructor(private http: HttpClient) { 
     this.http.get('assets/countries.json').subscribe((res)=>{
       this.countries = res;
-      console.log('result is:' + this.countries)
     })
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SentComponent } from '../sent/sent.component';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class FormComponent implements OnInit {
 
-  constructor( public route: Router) { }
+  constructor(public route: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  /*goHome(){
+  goHome(){
     this.route.navigate(['']);
-  }*/
+  }
 
   form = new FormGroup({
     	name: new FormControl(null, [
@@ -44,5 +45,6 @@ export class FormComponent implements OnInit {
   send(){
     console.log(this.form.value)
     this.form.reset();
+    this.dialog.open(SentComponent);
   }
 }
